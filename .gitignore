@@ -1,3 +1,5 @@
 .DS_Store
 /data/default
 /build/foundryvtt/latest
+/build/nginx/SSL/*.pem
+/build/foundryvtt/SSL/*.pem
