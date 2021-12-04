@@ -1,0 +1,14 @@
+{
+  http_port 80
+  https_port 443
+}
+
+mcbane.hopto.org:80, foundrynuc.attlocal.net:80, foundrynuc:80, localhost:80 {
+  respond "I am at 80"
+}
+
+mcbane.hopto.org:443, foundrynuc.attlocal.net:443, foundrynuc:443, localhost:443 {
+  respond "I am at 443"
+}
+
+import /etc/caddy/config.d/*.conf

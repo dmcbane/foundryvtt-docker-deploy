@@ -2,12 +2,45 @@ version: "3"
 
 services:
 
-  foundryvtt:
-    build: build
-    container_name: foundryvtt 
-    volumes:
-      - ./data/default:/data 
-    ports:
-      - 30001:30000 
+  foundryvtt-1:
+    build:
+      context: ./build/foundryvtt
+      dockerfile: Dockerfile
+    container_name: foundryvtt
     restart: unless-stopped
+    ports:
+      - 30000:30000 
+    volumes:
+      - ./data/default:/data
+    networks:
+      - backend
 
+  caddy:
+    build:
+      context: ./build/caddy
+      dockerfile: Dockerfile
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - frontend
+      - backend
+
+volumes:
+  caddy_data:
+    ##external: true
+    ### external so that docker-compose down doesn't delete
+    ### use docker volume create project_name_caddy_data to create the volume
+  caddy_config:
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+    
