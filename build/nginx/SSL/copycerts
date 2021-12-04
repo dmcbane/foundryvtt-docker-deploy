@@ -8,5 +8,6 @@ fi
 
 sudo cp "$1/fullchain.pem" .
 sudo cp "$1/privkey.pem" .
+sudo cp /etc/letsencrypt/ssl-dhparams.pem .
 sudo chown $(whoami):$(whoami) *
 
