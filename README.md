@@ -1,5 +1,8 @@
 # Foundry Virtual TableTop (VTT) Docker Deployment
 
+TODO: Update this to be accurate according to the NGINX changes.
+
+
 [Foundry](https://foundryvtt.com)VTT can be deployed on a remote server and have it accessible anywhere and anytime. The server itself does not need to be powerful as all the rendering and heavy task is done on the browser of the client. I am running my FoundryVTT instance on a 1vCPU with 1GB RAM and have not encountered any issues as of yet.
 
 This repository contains instructions for self-hosting [Foundry](https://foundryvtt.com)VTT service on your own computer or server using Docker. These instructions have been tested on ArchLinux and Ubuntu 20.04 LTS, however they should would unmodified on other platforms. 
