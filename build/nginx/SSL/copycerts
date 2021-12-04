@@ -1,0 +1,12 @@
+#!/bin/sh
+if [ "$#" -ne 1 ] || ! [ -d "$1" ]; then
+  echo "Usage: $0 DIRECTORY_CONTAINING_CERTS" >&2
+  echo "" >&2
+  echo "for example: $0 /etc/letsencrypt/live/some_domain"
+  exit 1
+fi
+
+sudo cp "$1/fullchain.pem" .
+sudo cp "$1/privkey.pem" .
+sudo chown $(whoami):$(whoami) *
+

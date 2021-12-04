@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to the McBane Foundry VTT Server</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+
+        html {
+            font-size: 125%;
+            height: 100%;
+        }
+
+        body {
+            width: 50em;
+            margin: 0 auto;
+            font-family: Lato, Tahoma, Verdana, Arial, sans-serif;
+            font-weight: 400;
+            line-height: 1.7;
+            box-sizing: border-box;
+            background: rgb(0,0,0);
+            background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(77,67,35,1) 100%);
+            color: rgba(241,214,123,1);
+            height: 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        a:link,
+        a:visited,
+        a:active {
+            color: white;
+        }
+    </style>
+    <script>
+        function setHref() {
+            window.location.replace("https://" + window.location.hostname + ":30000");
+        }
+    </script>
+</head>
+
+<body onload="setHref()">
+    <h1>Welcome to the McBane Foundry VTT Server!</h1>
+
+    <ul>
+        <li>The local server is available on
+            <a href="/" onclick="javascript:event.target.port=30000;javascript:event.currentTarget.protocol='https:'">port 30000</a>.
+        </li>
+        <li>
+            For more information about Foundry VTT, check out
+            <a href="https://foundryvtt.com/">https:/foundryvtt.com</a>.
+        </li>
+    </ul>
+
+</html>

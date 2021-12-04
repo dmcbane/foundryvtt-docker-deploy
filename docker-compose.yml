@@ -15,28 +15,18 @@ services:
     networks:
       - backend
 
-  caddy:
+  nginx:
     build:
-      context: ./build/caddy
+      context: ./build/nginx
       dockerfile: Dockerfile
-    container_name: caddy
+    container_name: nginx
     restart: unless-stopped
     ports:
       - 80:80
       - 443:443
-    volumes:
-      - caddy_data:/data
-      - caddy_config:/config
     networks:
       - frontend
       - backend
-
-volumes:
-  caddy_data:
-    ##external: true
-    ### external so that docker-compose down doesn't delete
-    ### use docker volume create project_name_caddy_data to create the volume
-  caddy_config:
 
 networks:
   frontend:

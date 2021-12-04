@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cp ../../nginx/SSL/fullchain.pem .
+cp ../../nginx/SSL/privkey.pem .
+
