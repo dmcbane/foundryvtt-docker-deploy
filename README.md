@@ -2,6 +2,7 @@
 
 TODO: Update this to be accurate according to the NGINX changes.
 
+When updating the server, you must delete the docker/foundryvtt/data/default/Config/license.json when you restart the server and then navigate to the <server_url:30000/license> url to input your licese before the updated server will start correctly.
 
 [Foundry](https://foundryvtt.com)VTT can be deployed on a remote server and have it accessible anywhere and anytime. The server itself does not need to be powerful as all the rendering and heavy task is done on the browser of the client. I am running my FoundryVTT instance on a 1vCPU with 1GB RAM and have not encountered any issues as of yet.
 
