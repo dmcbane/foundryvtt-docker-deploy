@@ -2,19 +2,6 @@ version: "3"
 
 services:
 
-  foundryvtt-1:
-    build:
-      context: ./build/foundryvtt
-      dockerfile: Dockerfile
-    container_name: foundryvtt
-    restart: unless-stopped
-    ports:
-      - 30000:30000 
-    volumes:
-      - ./data/default:/data
-    networks:
-      - backend
-
   nginx:
     build:
       context: ./build/nginx
@@ -26,11 +13,7 @@ services:
       - 443:443
     networks:
       - frontend
-      - backend
 
 networks:
   frontend:
     driver: bridge
-  backend:
-    driver: bridge
-    
